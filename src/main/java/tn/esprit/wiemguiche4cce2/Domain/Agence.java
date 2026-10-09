@@ -1,0 +1,26 @@
+package tn.esprit.wiemguiche4cce2.Domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class Agence {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long idAgence;
+    String ville;
+    String nom ;
+    String adresse;
+    String telephone;
+}
