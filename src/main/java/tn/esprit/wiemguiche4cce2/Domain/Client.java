@@ -26,4 +26,7 @@ public class Client {
     String telephone;
     String numPermis;
     LocalDate dateInscription;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    List<Reservation> reservations;
 }

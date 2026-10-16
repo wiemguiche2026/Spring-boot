@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -23,4 +24,9 @@ public class Contrat {
     LocalDate dateSignature;
     BigDecimal montantTotal;
     boolean valide;
+    @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL)
+    Set<Paiement> paiements;
+    @OneToOne
+    Reservation reservation;
+
 }

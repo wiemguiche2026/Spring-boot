@@ -22,4 +22,14 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     StatutReservation statut;
+
+    @ManyToOne
+    Client client;
+    @ManyToOne
+    Vehicule vehicule;
+
+    @OneToOne(mappedBy = "reservation", cascade = CascadeType.ALL)
+    Contrat contrat;
+
+
 }
